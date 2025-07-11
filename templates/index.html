@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Control - Mission Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Pi Mission Control</h1>
+            <div class="system-status">
+                <span class="status-indicator">●</span>
+                <span>System Online</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- System Overview Section -->
+            <section class="system-overview">
+                <h2>System Overview</h2>
+                <div class="overview-grid">
+                    <div class="metric-card">
+                        <h3>CPU Usage</h3>
+                        <div class="metric-value">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Memory</h3>
+                        <div class="metric-value">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Disk Usage</h3>
+                        <div class="metric-value">--</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Temperature</h3>
+                        <div class="metric-value">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Control Section -->
+            <section class="service-control">
+                <h2>Service Control</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Web Server</h3>
+                        <div class="service-status">Unknown</div>
+                        <div class="service-controls">
+                            <button class="btn start-btn">Start</button>
+                            <button class="btn stop-btn">Stop</button>
+                            <button class="btn restart-btn">Restart</button>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Database</h3>
+                        <div class="service-status">Unknown</div>
+                        <div class="service-controls">
+                            <button class="btn start-btn">Start</button>
+                            <button class="btn stop-btn">Stop</button>
+                            <button class="btn restart-btn">Restart</button>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Custom Service</h3>
+                        <div class="service-status">Unknown</div>
+                        <div class="service-controls">
+                            <button class="btn start-btn">Start</button>
+                            <button class="btn stop-btn">Stop</button>
+                            <button class="btn restart-btn">Restart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Command Center Section -->
+            <section class="command-center">
+                <h2>Command Center</h2>
+                <div class="command-panel">
+                    <div class="command-input">
+                        <label for="command-input"></label><input type="text" placeholder="Enter command..." id="command-input">
+                        <button class="btn execute-btn">Execute</button>
+                    </div>
+                    <div class="command-output">
+                        <pre id="command-output">Ready for commands...</pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Logs Section -->
+            <section class="system-logs">
+                <h2>System Logs</h2>
+                <div class="logs-panel">
+                    <div class="log-controls">
+                        <label for="log-selector"></label><select id="log-selector">
+                            <option value="system">System Log</option>
+                            <option value="apache">Apache Log</option>
+                            <option value="custom">Custom Log</option>
+                        </select>
+                        <button class="btn refresh-btn">Refresh</button>
+                    </div>
+                    <div class="log-output">
+                        <pre id="log-content">No logs loaded...</pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
